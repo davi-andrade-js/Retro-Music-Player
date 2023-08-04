@@ -3,11 +3,11 @@
   <head>
     <title>Retro Music Player</title>
     <meta charset="UTF-8" />
-    <link rel='stylesheet' href="./src/styles.css">
+    <link rel="stylesheet" href="./src/styles.css" />
   </head>
 
   <body>
-    <div id="app" style="display: inline-block; text-align: left;">
+    <div id="app" style="display: inline-block; text-align: left">
       <div id="musicPlayer" class="sideBtns">
         <img
           class="btnsImages"
@@ -45,6 +45,19 @@
       </div>
     </div>
 
+    <section id="screens">
+      <div class="screenHeader">
+        <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
+        <p>Music Player</p>
+        <button id="screenButton">X</button>
+      </div>
+
+      <div class="content">
+        <p class="songTitle">Música</p>
+        <p class="songAuthor">Autor</p>
+      </div>
+    </section>
+
     <footer id="footer">
       <div id="start">
         <img
@@ -56,6 +69,6 @@
       <div id="clock"><p>11:10</p></div>
     </footer>
 
-    <script src="src/index.js"></script>
+    <script type="module" src="src/js/index.js"></script>
   </body>
 </html>
