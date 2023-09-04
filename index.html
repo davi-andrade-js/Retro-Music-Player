@@ -17,6 +17,7 @@
         <p class="sideTitles">Music Player</p>
       </div>
       <br />
+
       <div id="myComputer" class="sideBtns">
         <img
           class="btnsImages"
@@ -26,6 +27,7 @@
         <p class="sideTitles">Meu Computador</p>
       </div>
       <br />
+
       <div id="config" class="sideBtns">
         <img
           class="btnsImages"
@@ -35,6 +37,7 @@
         <p class="sideTitles">Configurações</p>
       </div>
       <br />
+
       <div id="info" class="sideBtns">
         <img
           class="btnsImages"
@@ -46,15 +49,32 @@
     </div>
 
     <section id="screens">
-      <div class="screenHeader">
-        <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
-        <p>Music Player</p>
-        <button id="screenButton">X</button>
-      </div>
+      <div id="musicPlayerScreen">
+        <div class="screenHeader">
+          <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
+          <p>Music Player</p>
+          <button id="screenButton">X</button>
+        </div>
+        <br />
 
-      <div class="content">
-        <p class="songTitle">Música</p>
-        <p class="songAuthor">Autor</p>
+        <img class="ghibli" src="./images/ghibli.gif" />
+
+        <div class="content">
+          <label class="songTitle">Música</label>
+          <label class="songAuthor">Autor</label>
+        </div>
+
+        <progress value="0" max="100"></progress>
+
+        <div class="controls">
+          <p class="musicTimer">02:30</p>
+          <button id="volumeUpBtn" class="volumeBtn">+</button>
+          <button id="goBackBtn" class="controlsBtn">←</button>
+          <button id="playPauseBtn" class="controlsBtn">♪</button>
+          <button id="goForwardBtn" class="controlsBtn">→</button>
+          <button id="volumeDownBtn" class="volumeBtn">-</button>
+          <p class="musicTime">02:30</p>
+        </div>
       </div>
     </section>
 

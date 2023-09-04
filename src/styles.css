@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("https://64.media.tumblr.com/a2f6b0a54e45c0280c5f1f2a2311b46d/564c2311c24eaca6-8d/s540x810/504d5245be7f5c9d4e473026ea4ed3396e2970ab.gif");
   background-repeat: no-repeat;
@@ -51,7 +55,7 @@ body {
 #start,
 #clock {
   background: #c0c0c0;
-  height: 3vh;
+  height: 4vh;
   padding: 1px;
   margin-left: 5px;
   margin-right: 5px;
@@ -66,8 +70,6 @@ body {
 }
 
 #screens {
-  color: white;
-  display: flex;
   position: absolute;
   top: 0;
   right: 0;
@@ -76,28 +78,75 @@ body {
   width: 100%;
   height: 100vh;
   display: none;
+  text-align: center;
+}
+
+#musicPlayerScreen {
+  background-color: #c0c0c0;
+  padding: 10px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
 }
 
 .screenHeader {
+  color: white;
   background-color: #000181;
+  display: flex;
   width: 40vh;
   height: 30px;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: default;
+  padding: 8px;
 }
 
-#screenButton {
-  cursor: pointer;
+.songTitle {
+  display: block;
 }
 
-.content {
+.songAuthor {
+  display: block;
+}
+
+.controls {
   display: flex;
-  position: absolute;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  cursor: pointer;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  border-radius: 0;
+  background: #c0c0c0;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #909090;
+}
+
+.controlsBtn {
+  height: 40px;
+  width: 40px;
+}
+
+.volumeBtn {
+  height: 30px;
+  width: 30px;
 }
 
 .screenImg {
   height: 3vh;
+}
+
+.ghibli {
+  width: 40vh;
+  border: 2px solid #393939;
 }
