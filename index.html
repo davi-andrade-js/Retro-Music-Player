@@ -4,6 +4,7 @@
     <title>Retro Music Player</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./src/styles.css" />
+    <script src="https://kit.fontawesome.com/daffe5b995.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -51,8 +52,10 @@
     <section id="screens">
       <div id="musicPlayerScreen">
         <div class="screenHeader">
-          <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
-          <p>Music Player</p>
+          <div class="screenTitle">
+            <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
+            <p>Music Player</p>
+          </div>
           <button id="screenButton">X</button>
         </div>
         <br />
@@ -64,16 +67,26 @@
           <label class="songAuthor">Autor</label>
         </div>
 
-        <progress value="0" max="100"></progress>
+        <progress class="progressBar" value="0" max="100"></progress>
 
         <div class="controls">
-          <p class="musicTimer">02:30</p>
-          <button id="volumeUpBtn" class="volumeBtn">+</button>
-          <button id="goBackBtn" class="controlsBtn">←</button>
-          <button id="playPauseBtn" class="controlsBtn">♪</button>
-          <button id="goForwardBtn" class="controlsBtn">→</button>
-          <button id="volumeDownBtn" class="volumeBtn">-</button>
-          <p class="musicTime">02:30</p>
+          <p class="musicTimer">2:30</p>
+          <button class="volumeBtn controlsBtn">
+            <i class="fa-solid fa-plus" style="color: #000000"></i>
+          </button>
+          <button class="musicBtn controlsBtn">
+            <i class="fa-solid fa-backward-step" style="color: #000000"></i>
+          </button>
+          <button class="musicBtn controlsBtn">
+            <i class="fa-solid fa-circle-play"></i>
+          </button>
+          <button class="musicBtn controlsBtn">
+            <i class="fa-solid fa-forward-step" style="color: #000000"></i>
+          </button>
+          <button class="volumeBtn controlsBtn">
+            <i class="fa-solid fa-minus" style="color: #000000"></i>
+          </button>
+          <p class="musicTime">2:30</p>
         </div>
       </div>
     </section>
