@@ -4,5 +4,5 @@ import { close } from "./script.js";
 const playerButton = document.getElementById("musicPlayer");
 playerButton.addEventListener("click", playerHandler);
 
-const screenButton = document.getElementById("screenButton");
-screenButton.addEventListener("click", close);
+const closeScreenBtn = document.querySelector(".closeScreenBtn");
+closeScreenBtn.addEventListener("click", close);

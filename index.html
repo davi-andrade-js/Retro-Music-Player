@@ -56,7 +56,9 @@
             <img class="screenImg" src="https://retromusicplayer.netlify.app/images/cd.png" />
             <p>Music Player</p>
           </div>
-          <button id="screenButton">X</button>
+          <button class="closeScreenBtn">
+            <i class="fa-solid fa-xmark" style="color: #000000"></i>
+          </button>
         </div>
         <br />
 
@@ -67,26 +69,28 @@
           <label class="songAuthor">Autor</label>
         </div>
 
+        <audio id="audio" src="src/songs/wave.mp3"></audio>
+
         <progress class="progressBar" value="0" max="100"></progress>
 
         <div class="controls">
-          <p class="musicTimer">2:30</p>
-          <button class="volumeBtn controlsBtn">
+          <p class="musicTimer"></p>
+          <button id="increaseVolume" class="volumeBtn controlsBtn">
             <i class="fa-solid fa-plus" style="color: #000000"></i>
           </button>
-          <button class="musicBtn controlsBtn">
+          <button id="goBackBtn" class="musicBtn controlsBtn">
             <i class="fa-solid fa-backward-step" style="color: #000000"></i>
           </button>
-          <button class="musicBtn controlsBtn">
+          <button id="playPouseBtn" class="musicBtn controlsBtn">
             <i class="fa-solid fa-circle-play"></i>
           </button>
-          <button class="musicBtn controlsBtn">
+          <button id="goForwardBtn" class="musicBtn controlsBtn">
             <i class="fa-solid fa-forward-step" style="color: #000000"></i>
           </button>
-          <button class="volumeBtn controlsBtn">
+          <button id="decreaseVolume" class="volumeBtn controlsBtn">
             <i class="fa-solid fa-minus" style="color: #000000"></i>
           </button>
-          <p class="musicTime">2:30</p>
+          <p class="musicTime"></p>
         </div>
       </div>
     </section>
@@ -103,5 +107,6 @@
     </footer>
 
     <script type="module" src="src/js/index.js"></script>
+    <script type="module" src="src/js/script.js"></script>
   </body>
 </html>
