@@ -43,7 +43,8 @@ body {
 }
 
 .footerImg {
-  width: 4vh;
+  width: 3vh;
+  padding-right: 4px;
 }
 
 #footer {
@@ -62,8 +63,10 @@ body {
 #start,
 #clock {
   background: #c0c0c0;
+  font-size: 1.1rem;
   height: 4vh;
-  padding: 1px;
+  padding-left: 3px;
+  padding-right: 3px;
   margin-left: 5px;
   margin-right: 5px;
   border-left: 2px solid white;
