@@ -1,4 +1,4 @@
-import { playerHandler } from "./playerHandler.js";
+import { playerHandler } from "./script.js";
 import { close } from "./script.js";
 
 const playerButton = document.getElementById("musicPlayer");

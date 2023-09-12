@@ -48,74 +48,51 @@ body {
   color: white;
 }
 
-.footerImg {
-  width: 3vh;
-  padding-right: 3px;
-}
-
-#footer {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #c0c0c0;
-  border-top: 2px solid white;
-  width: 100%;
-  height: 5vh;
-  bottom: 0;
-  left: 0;
-}
-
-#start,
-#clock {
-  background: #c0c0c0;
-  font-size: 1.1rem;
-  height: 3.5vh;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-left: 2px solid white;
-  border-top: 2px solid white;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
 #screens {
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 100%;
   height: 100vh;
   display: none;
-  text-align: center;
 }
 
 #musicPlayerScreen {
-  background-color: #c0c0c0;
+  width: 300px;
   padding: 10px;
+  background-color: #c0c0c0;
   border-top: 2px solid white;
   border-left: 2px solid white;
   border-right: 2px solid #393939;
   border-bottom: 2px solid #393939;
 }
 
+@media (max-width: 500px) {
+  #musicPlayerScreen {
+    width: 82%;
+  }
+}
+
 .screenHeader {
   color: white;
   background-color: #000181;
   display: flex;
-  width: 40vh;
+  width: 100%;
   height: 30px;
   align-items: center;
   justify-content: space-between;
   cursor: default;
   padding: 5px;
+}
+
+.headerImg {
+  width: 1.5rem;
+  height: 1.3rem;
+  padding-right: 3px;
 }
 
 .screenTitle {
@@ -130,25 +107,53 @@ body {
   height: 22px;
 }
 
+.songGif {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #393939;
+}
+
 .songTitle {
   display: block;
   font-size: 1.8rem;
   padding: 5px;
 }
+
 .songAuthor {
   display: block;
   font-size: 18px;
+  color: #3f3f3f;
 }
 
 .progressBar {
-  margin: 10px auto 10px auto;
   width: 100%;
+  margin: 10px auto 10px auto;
   height: 2px;
   border-top: 2px solid #393939;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #393939;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+progress {
+  height: 2px;
+  width: 0%;
+}
+
+.progressMark {
+  width: 10px;
+  height: 15px;
+  border-top: 2px solid white;
   border-left: 2px solid white;
   border-right: 2px solid #393939;
-  border-bottom: 2px solid white;
-  border-radius: 0px;
+  border-bottom: 2px solid #393939;
+  border-radius: 0;
+  background: #c0c0c0;
 }
 
 .controlsBtn {
@@ -189,19 +194,44 @@ button:hover {
   width: 30px;
 }
 
-.screenImg {
-  width: 1.5rem;
-  height: 1.5rem;
-  padding-right: 3px;
-}
-
-.musicTimer,
-.musicTime {
+.currentTime,
+.endTime {
   font-size: 13px;
 }
 
-.songGif {
+.footerImg {
+  width: 3vh;
+  padding-right: 3px;
+}
+
+#footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c0c0c0;
+  border-top: 2px solid white;
   width: 100%;
-  height: 30vh;
-  border: 2px solid #393939;
+  height: 5vh;
+  bottom: 0;
+  left: 0;
+}
+
+#start,
+#clock {
+  background: #c0c0c0;
+  font-size: 1.1rem;
+  height: 3.5vh;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }

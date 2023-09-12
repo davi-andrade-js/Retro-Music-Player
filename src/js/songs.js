@@ -5,4 +5,10 @@ export default [
     author: "Tom Jobim",
     gif: "./images/wave.gif",
   },
+  {
+    src: "",
+    name: "Disritmia",
+    author: "",
+    gif: "",
+  },
 ];

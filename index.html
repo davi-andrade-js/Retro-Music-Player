@@ -37,7 +37,7 @@
       <div id="musicPlayerScreen">
         <div class="screenHeader">
           <div class="screenTitle">
-            <img class="screenImg" src="./images/music-player-icon.png" />
+            <img class="headerImg" src="./images/music-player-icon.png" />
             <p>Music Player</p>
           </div>
           <button class="closeScreenBtn">
@@ -55,10 +55,13 @@
 
         <audio id="audio" src="src/songs/wave.mp3"></audio>
 
-        <progress class="progressBar" value="0" max="100"></progress>
+        <div class="progressBar">
+          <progress value="0" max="100"></progress>
+          <div class="progressMark"></div>
+        </div>
 
         <div class="controls">
-          <p class="musicTimer"></p>
+          <p class="currentTime">0:00</p>
           <button id="increaseVolume" class="volumeBtn controlsBtn">
             <i class="fa-solid fa-plus" style="color: #000000"></i>
           </button>
@@ -74,7 +77,7 @@
           <button id="decreaseVolume" class="volumeBtn controlsBtn">
             <i class="fa-solid fa-minus" style="color: #000000"></i>
           </button>
-          <p class="musicTime"></p>
+          <p class="endTime"></p>
         </div>
       </div>
     </section>
@@ -89,6 +92,6 @@
 
     <script type="module" src="src/js/index.js"></script>
     <script type="module" src="src/js/script.js"></script>
-    <script type="module" src="src/js/playerHandler.js"></script>
+    <!--<script type="module" src="src/js/playerHandler.js"></script> -->
   </body>
 </html>
