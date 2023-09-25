@@ -25,8 +25,7 @@ decreaseVolume.addEventListener("click", volumeDown);
 audio.addEventListener("timeupdate", updateProgress);
 
 progressBarDiv.onclick = (e) => {
-  const newTime = (e.offsetX / progressBar.offsetWidth) * audio.duration;
-  audio.currentTime = newTime;
+  progressBarHandler(e);
 };
 
 // funções
@@ -41,11 +40,14 @@ export function playerHandler() {
 function updateProgress() {
   progressBar.style.width = Math.floor((audio.currentTime / audio.duration) * 100) + "%";
   songCurrentTime.textContent = secondsToMinutes(Math.floor(audio.currentTime));
+
+  const progressMarkPosition = (percentage / 100) * progressBarDiv.offsetWidth;
+  progressMark.style.left = `${progressMarkPosition}px`;
 }
 
 function progressBarHandler(e) {
-  const newTime = (e.offsetX / progressBar.offsetWidth) * audio.duration;
-  audio.currentTime = newTime;
+  progressBar.style.width = e.offsetX + "px";
+  audio.currentTime = (e.offsetX / progressBarDiv.offsetWidth) * audio.duration;
 }
 
 function secondsToMinutes(seconds) {
@@ -82,3 +84,38 @@ export function close() {
   playPouseBtn.innerHTML = playBtn;
   screens.style.display = "none";
 }
+
+const progressMark = document.querySelector(".progressMark");
+let isDragging = false;
+let initialPositionX = 0;
+
+progressMark.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  initialPositionX = e.clientX;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    const offsetX = e.clientX - progressBarDiv.getBoundingClientRect().left;
+    const progressBarWidth = progressBarDiv.offsetWidth;
+    const percentage = (offsetX / progressBarWidth) * 100;
+
+    progressBar.style.width = `${percentage}%`;
+
+    // Não atualize o tempo de reprodução durante o arrasto
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  if (isDragging) {
+    isDragging = false;
+
+    // Atualize o tempo de reprodução com base na posição inicial e final do bloquinho
+    const progressBarWidth = progressBarDiv.offsetWidth;
+    const percentage =
+      ((initialPositionX - progressBarDiv.getBoundingClientRect().left) / progressBarWidth) * 100;
+
+    const newTime = (percentage / 100) * audio.duration;
+    audio.currentTime = newTime;
+  }
+});
