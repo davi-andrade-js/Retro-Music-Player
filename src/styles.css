@@ -196,6 +196,7 @@ button:hover {
 
 .currentTime,
 .endTime {
+  width: 30px;
   font-size: 13px;
 }
 
