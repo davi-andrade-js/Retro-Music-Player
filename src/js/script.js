@@ -30,13 +30,27 @@ goBackBtn.addEventListener("click", goBack);
 goForwardBtn.addEventListener("click", goForward);
 
 function goForward() {
-  songIndex++;
-  playerRender(songIndex);
-  playPouse();
+  if (songIndex === songs.length - 1) {
+    songIndex = 0;
+    playerRender(songIndex);
+    playPouse();
+  } else {
+    songIndex++;
+    playerRender(songIndex);
+    playPouse();
+  }
 }
 
 function goBack() {
-  console.log("lorem");
+  if (songIndex === 0) {
+    songIndex = songs.length - 1;
+    playerRender(songIndex);
+    playPouse();
+  } else {
+    songIndex--;
+    playerRender(songIndex);
+    playPouse();
+  }
 }
 
 progressBarDiv.onclick = (e) => {
@@ -47,11 +61,13 @@ progressBarDiv.onclick = (e) => {
 
 export function playerRender() {
   screens.style.display = "flex";
-  endTime.textContent = secondsToMinutes(Math.floor(song.duration));
   songTitle.textContent = songs[songIndex].name;
   songAuthor.textContent = songs[songIndex].author;
   songGif.src = songs[songIndex].gif;
   song.src = songs[songIndex].src;
+  audio.addEventListener("loadeddata", () => {
+    endTime.textContent = secondsToMinutes(Math.floor(song.duration));
+  });
   song.addEventListener("timeupdate", updateProgress);
 }
 
