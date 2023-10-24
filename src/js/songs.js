@@ -17,4 +17,10 @@ export default [
     author: "Alceu Valença",
     gif: "./images/labelledejour2 (1).gif",
   },
+  {
+    src: "src/songs/comoeuquero.mp3",
+    name: "Como eu quero",
+    author: "Kid Abelha",
+    gif: "./images/comoeuqueroo.gif",
+  },
 ];

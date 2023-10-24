@@ -26,10 +26,10 @@ playPouseBtn.addEventListener("click", playPouse);
 increaseVolume.addEventListener("click", volumeUp);
 decreaseVolume.addEventListener("click", volumeDown);
 song.addEventListener("timeupdate", updateProgress);
-goBackBtn.addEventListener("click", goBack);
-goForwardBtn.addEventListener("click", goForward);
+goBackBtn.addEventListener("click", rewind);
+goForwardBtn.addEventListener("click", skip);
 
-function goForward() {
+function skip() {
   if (songIndex === songs.length - 1) {
     songIndex = 0;
     playerRender(songIndex);
@@ -41,7 +41,7 @@ function goForward() {
   }
 }
 
-function goBack() {
+function rewind() {
   if (songIndex === 0) {
     songIndex = songs.length - 1;
     playerRender(songIndex);
@@ -65,11 +65,17 @@ export function playerRender() {
   songAuthor.textContent = songs[songIndex].author;
   songGif.src = songs[songIndex].gif;
   song.src = songs[songIndex].src;
-  audio.addEventListener("loadeddata", () => {
+  song.addEventListener("loadeddata", () => {
     endTime.textContent = secondsToMinutes(Math.floor(song.duration));
   });
   song.addEventListener("timeupdate", updateProgress);
 }
+
+song.addEventListener("timeupdate", () => {
+  if (song.duration == song.currentTime) {
+    setTimeout(() => skip(), 1500);
+  }
+});
 
 function updateProgress() {
   progressBar.style.width = Math.floor((song.currentTime / song.duration) * 100) + "%";
