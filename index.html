@@ -4,43 +4,44 @@
     <title>Retro Music Player</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="icon" href="./images/icons/music-player-icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/daffe5b995.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="app" style="display: inline-block; text-align: left">
       <div id="musicPlayer" class="sideBtns">
-        <img class="btnsImages" id="playerIcon" src="./images/music-player-icon.png" />
-        <p class="sideTitles">Music Player</p>
+        <img class="btnsImages" id="playerIcon" src="./images/icons/music-player-icon.png" />
+        <p class="sideTitles">Player de Música</p>
       </div>
       <br />
 
       <div id="myComputer" class="sideBtns">
-        <img class="btnsImages" id="computerIcon" src="./images/my-computer-icon.png" />
+        <img class="btnsImages" id="computerIcon" src="./images/icons/my-computer-icon.png" />
         <p class="sideTitles">Meu Computador</p>
       </div>
       <br />
 
       <div id="config" class="sideBtns">
-        <img class="btnsImages" id="configIcon" src="./images/config-icon.png" />
+        <img class="btnsImages" id="configIcon" src="./images/icons/config-icon.png" />
         <p class="sideTitles">Configurações</p>
       </div>
       <br />
 
       <div id="info" class="sideBtns">
-        <img class="btnsImages" id="infoIcon" src="./images/folder-icon.png" />
+        <img class="btnsImages" id="infoIcon" src="./images/icons/folder-icon.png" />
         <p class="sideTitles">Sobre</p>
       </div>
     </div>
 
-    <section id="screens">
+    <section id="playerSection">
       <div id="musicPlayerScreen">
         <div class="screenHeader">
           <div class="screenTitle">
-            <img class="headerImg" src="./images/music-player-icon.png" />
-            <p>Music Player</p>
+            <img class="headerImg" src="./images/icons/music-player-icon.png" />
+            <p>Player de Música</p>
           </div>
-          <button class="closeScreenBtn">
+          <button id="closePlayer" class="closeScreenBtn">
             <i class="fa-solid fa-xmark" style="color: #000000"></i>
           </button>
         </div>
@@ -82,16 +83,45 @@
       </div>
     </section>
 
+    <section id="computerSection">
+      <div id="computerScreen">
+        <div class="screenHeader">
+          <div class="screenTitle">
+            <img class="headerImg" src="./images/icons/my-computer-icon.png" />
+            <p>Meu Computador</p>
+          </div>
+          <button id="closeComputer" class="closeScreenBtn">
+            <i class="fa-solid fa-xmark" style="color: #000000"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="configSection">
+      <div id="configScreen">
+        <div class="screenHeader">
+          <div class="screenTitle">
+            <img class="headerImg" src="./images/icons/config-icon.png" />
+            <p>Configurações</p>
+          </div>
+          <button id="closeConfig" class="closeScreenBtn">
+            <i class="fa-solid fa-xmark" style="color: #000000"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <footer id="footer">
       <div id="start">
-        <img class="footerImg" src="./images/windows-icon.png" />
+        <img class="footerImg" src="./images/icons/windows-icon.png" />
         <p>Start</p>
       </div>
-      <div id="clock"><p>11:10</p></div>
+      <div id="clock"><p></p></div>
     </footer>
 
     <script type="module" src="src/js/index.js"></script>
     <script type="module" src="src/js/script.js"></script>
+    <script type="module" src="src/js/clock.js"></script>
     <!--<script type="module" src="src/js/playerHandler.js"></script> -->
   </body>
 </html>

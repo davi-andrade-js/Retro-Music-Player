@@ -2,7 +2,7 @@ import songs from "./songs.js";
 
 export let songIndex = 0;
 
-const screens = document.getElementById("screens");
+const playerSection = document.getElementById("playerSection");
 const songTitle = document.querySelector(".songTitle");
 const songAuthor = document.querySelector(".songAuthor");
 const songGif = document.querySelector(".songGif");
@@ -29,6 +29,32 @@ song.addEventListener("timeupdate", updateProgress);
 goBackBtn.addEventListener("click", rewind);
 goForwardBtn.addEventListener("click", skip);
 
+progressBarDiv.onclick = (e) => {
+  progressBarHandler(e);
+};
+
+// funções
+
+export function playerRender() {
+  const musicPlayerScreen = document.getElementById("musicPlayerScreen");
+  musicPlayerScreen.style.display = "block";
+  playerSection.style.display = "flex";
+  songTitle.textContent = songs[songIndex].name;
+  songAuthor.textContent = songs[songIndex].author;
+  songGif.src = songs[songIndex].gif;
+  song.src = songs[songIndex].src;
+  song.addEventListener("loadeddata", () => {
+    endTime.textContent = secondsToMinutes(Math.floor(song.duration));
+  });
+  song.addEventListener("timeupdate", updateProgress);
+}
+
+song.addEventListener("timeupdate", () => {
+  if (song.duration == song.currentTime) {
+    setTimeout(() => skip(), 1500);
+  }
+});
+
 function skip() {
   if (songIndex === songs.length - 1) {
     songIndex = 0;
@@ -53,30 +79,6 @@ function rewind() {
   }
 }
 
-progressBarDiv.onclick = (e) => {
-  progressBarHandler(e);
-};
-
-// funções
-
-export function playerRender() {
-  screens.style.display = "flex";
-  songTitle.textContent = songs[songIndex].name;
-  songAuthor.textContent = songs[songIndex].author;
-  songGif.src = songs[songIndex].gif;
-  song.src = songs[songIndex].src;
-  song.addEventListener("loadeddata", () => {
-    endTime.textContent = secondsToMinutes(Math.floor(song.duration));
-  });
-  song.addEventListener("timeupdate", updateProgress);
-}
-
-song.addEventListener("timeupdate", () => {
-  if (song.duration == song.currentTime) {
-    setTimeout(() => skip(), 1500);
-  }
-});
-
 function updateProgress() {
   progressBar.style.width = Math.floor((song.currentTime / song.duration) * 100) + "%";
   songCurrentTime.textContent = secondsToMinutes(Math.floor(song.currentTime));
@@ -93,7 +95,7 @@ function secondsToMinutes(seconds) {
   return minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
 }
 
-function playPouse() {
+export function playPouse() {
   if (song.paused) {
     song.play();
     playPouseBtn.innerHTML = pauseBtn;
@@ -116,8 +118,8 @@ function volumeDown() {
 }
 
 export function close() {
-  const screens = document.getElementById("screens");
+  const musicPlayerScreen = document.getElementById("musicPlayerScreen");
   song.pause();
   playPouseBtn.innerHTML = playBtn;
-  screens.style.display = "none";
+  musicPlayerScreen.style.display = "none";
 }

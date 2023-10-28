@@ -1,8 +1,38 @@
-import { playerRender, songIndex } from "./script.js";
-import { close } from "./script.js";
+import { playerRender } from "./script.js";
+import { renderWallpapers } from "./my-computer.js";
+import { playPouse } from "./script.js";
+
+const playerSection = document.getElementById("playerSection");
+const computerSection = document.getElementById("computerSection");
+const configSection = document.getElementById("configSection");
 
 const playerButton = document.getElementById("musicPlayer");
-playerButton.addEventListener("click", playerRender);
+const myComputerButton = document.getElementById("myComputer");
+const configButton = document.getElementById("config");
 
-const closeScreenBtn = document.querySelector(".closeScreenBtn");
-closeScreenBtn.addEventListener("click", close);
+const closePlayerBtn = document.getElementById("closePlayer");
+const closeComputerBtn = document.getElementById("closeComputer");
+const closeConfigBtn = document.getElementById("closeConfig");
+
+const song = document.getElementById("audio");
+
+playerButton.addEventListener("click", playerRender);
+myComputerButton.addEventListener("click", renderWallpapers);
+configButton.addEventListener("click", () => {
+  const configScreen = document.getElementById("configScreen");
+  configSection.style.display = "flex";
+  configScreen.style.display = "block";
+});
+
+closePlayerBtn.addEventListener("click", () => {
+  song.pause();
+  playerSection.style.display = "none";
+});
+
+closeComputerBtn.addEventListener("click", () => {
+  computerSection.style.display = "none";
+});
+
+closeConfigBtn.addEventListener("click", () => {
+  configSection.style.display = "none";
+});
