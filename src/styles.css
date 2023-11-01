@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url("https://64.media.tumblr.com/a2f6b0a54e45c0280c5f1f2a2311b46d/564c2311c24eaca6-8d/s540x810/504d5245be7f5c9d4e473026ea4ed3396e2970ab.gif");
+  background-image: url("../images/wallpapers/moat.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -86,7 +86,7 @@ body {
 }
 
 #computerScreen {
-  width: 50rem;
+  width: 60rem;
   height: 30rem;
   padding: 10px;
   background-color: #c0c0c0;
@@ -111,6 +111,31 @@ body {
 }
 
 #configScreen {
+  width: 50rem;
+  height: 30rem;
+  padding: 10px;
+  background-color: #c0c0c0;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  display: none;
+}
+
+#infoSection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+#infoScreen {
   width: 50rem;
   height: 30rem;
   padding: 10px;
@@ -249,6 +274,19 @@ button:hover {
 .endTime {
   width: 30px;
   font-size: 13px;
+}
+
+#computerContent {
+  display: grid;
+  gap: 80px 20px;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  padding-top: 50px;
+}
+
+.wallpaper {
+  width: 200px;
+  height: 130px;
 }
 
 .footerImg {

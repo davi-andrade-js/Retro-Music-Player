@@ -1,6 +1,5 @@
 import { playerRender } from "./script.js";
 import { renderWallpapers } from "./my-computer.js";
-import { playPouse } from "./script.js";
 
 const playerSection = document.getElementById("playerSection");
 const computerSection = document.getElementById("computerSection");
@@ -15,6 +14,8 @@ const closeComputerBtn = document.getElementById("closeComputer");
 const closeConfigBtn = document.getElementById("closeConfig");
 
 const song = document.getElementById("audio");
+const playPouseBtn = document.getElementById("playPouseBtn");
+const playBtn = "<i class='fa-solid fa-play' style='color: #000000;'></i>";
 
 playerButton.addEventListener("click", playerRender);
 myComputerButton.addEventListener("click", renderWallpapers);
@@ -26,6 +27,7 @@ configButton.addEventListener("click", () => {
 
 closePlayerBtn.addEventListener("click", () => {
   song.pause();
+  playPouseBtn.innerHTML = playBtn;
   playerSection.style.display = "none";
 });
 
