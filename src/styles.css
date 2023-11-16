@@ -86,8 +86,8 @@ body {
 }
 
 #computerScreen {
-  width: 60rem;
-  height: 30rem;
+  width: 58rem;
+  height: 29rem;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -278,15 +278,21 @@ button:hover {
 
 #computerContent {
   display: grid;
-  gap: 80px 20px;
+  gap: 65px 20px;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto;
-  padding-top: 50px;
+  justify-content: center;
+  margin-top: 45px;
 }
 
 .wallpaper {
   width: 200px;
   height: 130px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  cursor: pointer;
 }
 
 .footerImg {
