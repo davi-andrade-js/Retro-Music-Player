@@ -1,4 +1,4 @@
-import { playerRender } from "./script.js";
+import { playPouse, playerRender } from "./script.js";
 import { renderWallpapers } from "./my-computer.js";
 
 const playerSection = document.getElementById("playerSection");
@@ -27,6 +27,7 @@ configButton.addEventListener("click", () => {
 
 closePlayerBtn.addEventListener("click", () => {
   playerSection.style.display = "none";
+  playPouse();
 });
 
 closeComputerBtn.addEventListener("click", () => {

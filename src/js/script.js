@@ -29,6 +29,12 @@ song.addEventListener("timeupdate", updateProgress);
 goBackBtn.addEventListener("click", rewind);
 goForwardBtn.addEventListener("click", skip);
 
+song.addEventListener("timeupdate", () => {
+  if (song.duration == song.currentTime) {
+    setTimeout(() => skip(), 1500);
+  }
+});
+
 progressBarDiv.onclick = (e) => {
   progressBarHandler(e);
 };
@@ -48,12 +54,6 @@ export function playerRender() {
   });
   song.addEventListener("timeupdate", updateProgress);
 }
-
-song.addEventListener("timeupdate", () => {
-  if (song.duration == song.currentTime) {
-    setTimeout(() => skip(), 1500);
-  }
-});
 
 function skip() {
   if (songIndex === songs.length - 1) {
