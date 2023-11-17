@@ -26,8 +26,6 @@ configButton.addEventListener("click", () => {
 });
 
 closePlayerBtn.addEventListener("click", () => {
-  song.pause();
-  playPouseBtn.innerHTML = playBtn;
   playerSection.style.display = "none";
 });
 

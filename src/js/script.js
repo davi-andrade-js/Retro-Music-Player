@@ -116,10 +116,3 @@ function volumeDown() {
     song.volume -= 0.1;
   }
 }
-
-export function close() {
-  const musicPlayerScreen = document.getElementById("musicPlayerScreen");
-  song.pause();
-  playPouseBtn.innerHTML = playBtn;
-  musicPlayerScreen.style.display = "none";
-}
