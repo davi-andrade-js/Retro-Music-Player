@@ -146,6 +146,18 @@ body {
   display: none;
 }
 
+#infoContent {
+  margin-top: 15px;
+}
+
+#infoMainContent {
+  font-size: 25px;
+}
+
+.infoSubContent {
+  font-size: 20px;
+}
+
 @media (max-width: 500px) {
   #musicPlayerScreen {
     width: 82%;
