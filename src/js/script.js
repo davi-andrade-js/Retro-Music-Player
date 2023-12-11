@@ -60,6 +60,7 @@ export function playerRender() {
 }
 
 function rewind() {
+  playClickSound();
   if (songIndex === 0) {
     songIndex = songs.length - 1;
     playerRender(songIndex);
@@ -72,6 +73,7 @@ function rewind() {
 }
 
 function skip() {
+  playClickSound();
   if (songIndex === songs.length - 1) {
     songIndex = 0;
     playerRender(songIndex);
@@ -84,6 +86,7 @@ function skip() {
 }
 
 export function play() {
+  playClickSound();
   if (song.paused) {
     if (savedPlaybackPosition > 0) {
       song.currentTime = savedPlaybackPosition;
@@ -95,6 +98,7 @@ export function play() {
 }
 
 export function pause() {
+  playClickSound();
   song.pause();
   playPauseBtn.innerHTML = playBtn;
   savedPlaybackPosition = song.currentTime;
@@ -109,12 +113,14 @@ export function playPause() {
 }
 
 function volumeUp() {
+  playClickSound();
   if (song.volume < 1) {
     song.volume += 0.1;
   }
 }
 
 function volumeDown() {
+  playClickSound();
   if (song.volume >= 0) {
     song.volume -= 0.1;
   }
@@ -134,4 +140,9 @@ function secondsToMinutes(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
   return minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
+}
+
+export function playClickSound() {
+  const clickSound = document.getElementById("clickSound");
+  clickSound.play();
 }

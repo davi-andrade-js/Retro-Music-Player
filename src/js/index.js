@@ -2,6 +2,7 @@ import { pause, playerRender } from "./script.js";
 import { renderWallpapers } from "./my-computer.js";
 import { renderConfig } from "./config.js";
 import { renderInfo } from "./info.js";
+import { playClickSound } from "./script.js";
 
 const playerSection = document.getElementById("playerSection");
 const playerButton = document.getElementById("musicPlayer");
@@ -23,24 +24,43 @@ const closeInfoBtn = document.getElementById("closeInfo");
 // const playPauseBtn = document.getElementById("playPauseBtn");
 // const playBtn = "<i class='fa-solid fa-play' style='color: #000000;'></i>";
 
-playerButton.addEventListener("click", playerRender);
-myComputerButton.addEventListener("click", renderWallpapers);
-configButton.addEventListener("click", renderConfig);
-infoButton.addEventListener("click", renderInfo);
+playerButton.addEventListener("click", () => {
+  playClickSound();
+  playerRender();
+});
+
+myComputerButton.addEventListener("click", () => {
+  playClickSound();
+  renderWallpapers();
+});
+
+configButton.addEventListener("click", () => {
+  playClickSound();
+  renderConfig();
+});
+
+infoButton.addEventListener("click", () => {
+  playClickSound();
+  renderInfo();
+});
 
 closePlayerBtn.addEventListener("click", () => {
+  playClickSound();
   playerSection.style.display = "none";
   pause();
 });
 
 closeComputerBtn.addEventListener("click", () => {
+  playClickSound();
   computerSection.style.display = "none";
 });
 
 closeConfigBtn.addEventListener("click", () => {
+  playClickSound();
   configSection.style.display = "none";
 });
 
 closeInfoBtn.addEventListener("click", () => {
+  playClickSound();
   infoSection.style.display = "none";
 });
