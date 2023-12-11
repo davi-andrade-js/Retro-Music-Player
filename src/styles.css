@@ -19,6 +19,21 @@ body {
   font-family: "windows-95";
 }
 
+button {
+  cursor: pointer;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  border-radius: 0;
+  background: #c0c0c0;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #a8a8a8;
+}
+
 #app {
   padding-top: 1vh;
   padding-left: 1vh;
@@ -51,12 +66,11 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: none;
 }
 
@@ -75,7 +89,6 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -103,15 +116,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: none;
 }
 
 #configScreen {
-  width: 50rem;
-  height: 30rem;
+  width: 40rem;
+  height: 20rem;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -119,6 +131,34 @@ body {
   border-right: 2px solid #393939;
   border-bottom: 2px solid #393939;
   display: none;
+}
+
+#configContent {
+  width: 100%;
+  height: 90%;
+  flex-direction: column;
+  display: flex;
+}
+
+.mainContent {
+  font-size: 25px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#subContent {
+  font-size: 22px;
+  margin-top: 10px;
+  flex-direction: row;
+  display: flex;
+}
+
+.soundOnOffBtn {
+  margin-left: 10px;
+  width: 2.5rem;
+  height: 1.7rem;
+  font-size: 15px;
 }
 
 #infoSection {
@@ -262,21 +302,6 @@ progress {
   justify-content: space-between;
 }
 
-button {
-  cursor: pointer;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  border-right: 2px solid #393939;
-  border-bottom: 2px solid #393939;
-  border-radius: 0;
-  background: #c0c0c0;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #a8a8a8;
-}
-
 .musicBtn {
   height: 40px;
   width: 40px;
@@ -295,11 +320,11 @@ button:hover {
 
 #computerContent {
   display: grid;
-  gap: 60px 20px;
+  gap: 40px 20px;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .wallpaper {
