@@ -7,6 +7,8 @@ export function renderConfig() {
   configScreen.style.display = "block";
 }
 
+// sound configs
+
 const clickSound = document.getElementById("clickSound");
 const soundOnBtn = document.getElementById("soundOnBtn");
 const soundOffBtn = document.getElementById("soundOffBtn");
@@ -38,4 +40,29 @@ soundOffBtn.addEventListener("click", () => {
   clickSoundOn = false;
 
   localStorage.setItem("click", clickSoundOn);
+});
+
+// wallpapers configs
+
+const wallpapers = document.querySelectorAll(".wallpaper");
+
+const wppOnBtn = document.getElementById("wppOnBtn");
+const wppOffBtn = document.getElementById("wppOffBtn");
+
+function switchWallpaperExtension(extension) {
+  const wallpapers = document.querySelectorAll(".wallpaper");
+  wallpapers.forEach((wallpaper) => {
+    const src = wallpaper.getAttribute("src");
+    wallpaper.setAttribute("src", src.replace(/\.(gif|png)$/, `.${extension}`));
+  });
+}
+
+wppOnBtn.addEventListener("click", () => {
+  playClickSound();
+  switchWallpaperExtension("png");
+});
+
+wppOffBtn.addEventListener("click", () => {
+  playClickSound();
+  switchWallpaperExtension("gif");
 });
