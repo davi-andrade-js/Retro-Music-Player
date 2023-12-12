@@ -20,47 +20,23 @@ const infoSection = document.getElementById("infoSection");
 const infoButton = document.getElementById("info");
 const closeInfoBtn = document.getElementById("closeInfo");
 
-// const song = document.getElementById("audio");
-// const playPauseBtn = document.getElementById("playPauseBtn");
-// const playBtn = "<i class='fa-solid fa-play' style='color: #000000;'></i>";
-
-playerButton.addEventListener("click", () => {
-  playClickSound();
-  playerRender();
-});
-
-myComputerButton.addEventListener("click", () => {
-  playClickSound();
-  renderWallpapers();
-});
-
-configButton.addEventListener("click", () => {
-  playClickSound();
-  renderConfig();
-});
-
-infoButton.addEventListener("click", () => {
-  playClickSound();
-  renderInfo();
-});
+playerButton.addEventListener("click", () => handleButtonClick(playerRender));
+myComputerButton.addEventListener("click", () => handleButtonClick(renderWallpapers));
+configButton.addEventListener("click", () => handleButtonClick(renderConfig));
+infoButton.addEventListener("click", () => handleButtonClick(renderInfo));
 
 closePlayerBtn.addEventListener("click", () => {
-  playClickSound();
-  playerSection.style.display = "none";
-  pause();
+  handleCloseButtons(playerSection), pause();
 });
+closeComputerBtn.addEventListener("click", () => handleCloseButtons(computerSection));
+closeConfigBtn.addEventListener("click", () => handleCloseButtons(configSection));
+closeInfoBtn.addEventListener("click", () => handleCloseButtons(infoSection));
 
-closeComputerBtn.addEventListener("click", () => {
+function handleButtonClick(renderFunction) {
   playClickSound();
-  computerSection.style.display = "none";
-});
+  renderFunction();
+}
 
-closeConfigBtn.addEventListener("click", () => {
-  playClickSound();
-  configSection.style.display = "none";
-});
-
-closeInfoBtn.addEventListener("click", () => {
-  playClickSound();
-  infoSection.style.display = "none";
-});
+function handleCloseButtons(section) {
+  section.style.display = "none";
+}

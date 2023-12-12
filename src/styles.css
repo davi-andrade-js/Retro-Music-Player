@@ -91,7 +91,6 @@ button:hover {
   right: 0;
   align-items: center;
   justify-content: center;
-  text-align: center;
   width: 100%;
   height: 100vh;
   display: none;
@@ -99,7 +98,7 @@ button:hover {
 
 #computerScreen {
   width: 61rem;
-  height: 28rem;
+  height: 26.5rem;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -107,6 +106,15 @@ button:hover {
   border-right: 2px solid #393939;
   border-bottom: 2px solid #393939;
   display: none;
+}
+
+#computerContent {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 #configSection {
@@ -145,13 +153,22 @@ button:hover {
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 5px;
 }
 
-#subContent {
+#configSubContent {
   font-size: 22px;
+  gap: 10px;
   margin-top: 10px;
-  flex-direction: row;
+  margin-left: 5px;
+  flex-direction: column;
   display: flex;
+}
+
+#soundConfigs,
+#wppConfigs {
+  display: flex;
+  flex-direction: row;
 }
 
 .OnOffBtn {
@@ -316,15 +333,6 @@ progress {
 .endTime {
   width: 30px;
   font-size: 13px;
-}
-
-#computerContent {
-  display: grid;
-  gap: 40px 20px;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto;
-  justify-content: center;
-  margin-top: 25px;
 }
 
 .wallpaper {

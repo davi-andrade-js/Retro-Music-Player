@@ -50,36 +50,53 @@ const wppOnBtn = document.getElementById("wppOnBtn");
 const wppOffBtn = document.getElementById("wppOffBtn");
 
 function switchWallpaperExtension(extension) {
-  const wallpapers = document.querySelectorAll(".wallpaper");
   wallpapers.forEach((wallpaper) => {
     const src = wallpaper.getAttribute("src");
     wallpaper.setAttribute("src", src.replace(/\.(gif|png)$/, `.${extension}`));
   });
 }
 
+let isWppPaused = localStorage.getItem("pauseWpp") ?? false;
+
+if (isWppPaused === "true" || clickSoundOn === true) {
+  wppOnBtn.style.backgroundColor = "#00ff00";
+  switchWallpaperExtension("png");
+} else {
+  wppOffBtn.style.backgroundColor = "#ff0000";
+  switchWallpaperExtension("gif");
+}
+
 wppOnBtn.addEventListener("click", () => {
   playClickSound();
   switchWallpaperExtension("png");
+
+  localStorage.setItem("pauseWpp", true);
   wppOnBtn.style.backgroundColor = "#00ff00";
   wppOffBtn.style.backgroundColor = "#c0c0c0";
+
   changeWpp("on");
 });
 
 wppOffBtn.addEventListener("click", () => {
   playClickSound();
   switchWallpaperExtension("gif");
+
+  localStorage.setItem("pauseWpp", false);
   wppOffBtn.style.backgroundColor = "#ff0000";
   wppOnBtn.style.backgroundColor = "#c0c0c0";
+
   changeWpp("off");
 });
 
 function changeWpp(onOff) {
   let currentWpp = localStorage.getItem("bgGif") ?? wallpapers[0].image;
+
   if (onOff === "on") {
     currentWpp = currentWpp.replace(/\.gif$/, ".png");
   } else {
     currentWpp = currentWpp.replace(/\.png$/, ".gif");
   }
+
   localStorage.setItem("bgGif", currentWpp);
   document.querySelector("body").style.backgroundImage = `url(${currentWpp})`;
 }
