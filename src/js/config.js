@@ -60,9 +60,26 @@ function switchWallpaperExtension(extension) {
 wppOnBtn.addEventListener("click", () => {
   playClickSound();
   switchWallpaperExtension("png");
+  wppOnBtn.style.backgroundColor = "#00ff00";
+  wppOffBtn.style.backgroundColor = "#c0c0c0";
+  changeWpp("on");
 });
 
 wppOffBtn.addEventListener("click", () => {
   playClickSound();
   switchWallpaperExtension("gif");
+  wppOffBtn.style.backgroundColor = "#ff0000";
+  wppOnBtn.style.backgroundColor = "#c0c0c0";
+  changeWpp("off");
 });
+
+function changeWpp(onOff) {
+  let currentWpp = localStorage.getItem("bgGif") ?? wallpapers[0].image;
+  if (onOff === "on") {
+    currentWpp = currentWpp.replace(/\.gif$/, ".png");
+  } else {
+    currentWpp = currentWpp.replace(/\.png$/, ".gif");
+  }
+  localStorage.setItem("bgGif", currentWpp);
+  document.querySelector("body").style.backgroundImage = `url(${currentWpp})`;
+}
