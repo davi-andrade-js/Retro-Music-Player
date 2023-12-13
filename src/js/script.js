@@ -36,10 +36,6 @@ song.addEventListener("timeupdate", () => {
   }
 });
 
-progressBarDiv.onclick = (e) => {
-  progressBarHandler(e);
-};
-
 // funções
 
 export function playerRender() {
@@ -107,9 +103,9 @@ export function pause() {
 export function playPause() {
   if (song.paused) {
     play();
-  } else {
-    pause();
+    return;
   }
+  pause();
 }
 
 function volumeUp() {
@@ -126,23 +122,32 @@ function volumeDown() {
   }
 }
 
+export function playClickSound() {
+  const clickSound = document.getElementById("clickSound");
+  clickSound.play();
+}
+
+// progressbar
+
+progressBarDiv.onclick = (e) => {
+  progressBarHandler(e);
+};
+
 function updateProgress() {
   progressBar.style.width = Math.floor((song.currentTime / song.duration) * 100) + "%";
   songCurrentTime.textContent = secondsToMinutes(Math.floor(song.currentTime));
+  savedPlaybackPosition = song.currentTime;
 }
 
 function progressBarHandler(e) {
-  progressBar.style.width = e.offsetX + "px";
-  song.currentTime = (e.offsetX / progressBarDiv.offsetWidth) * song.duration;
+  const rect = progressBarDiv.getBoundingClientRect();
+  const offsetX = e.clientX - rect.left;
+  progressBar.style.width = offsetX + "px";
+  song.currentTime = (offsetX / progressBarDiv.offsetWidth) * song.duration;
 }
 
 function secondsToMinutes(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
   return minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
-}
-
-export function playClickSound() {
-  const clickSound = document.getElementById("clickSound");
-  clickSound.play();
 }
