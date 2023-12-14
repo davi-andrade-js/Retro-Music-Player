@@ -3,6 +3,7 @@
   <head>
     <title>Retro Music Player</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles.css" />
     <link rel="icon" href="./images/icons/music-player-icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/daffe5b995.js" crossorigin="anonymous"></script>
@@ -95,7 +96,7 @@
           </button>
         </div>
 
-        <div class="mainContent">
+        <div class="computerMainContent">
           <p>Escolha o papel de parede</p>
         </div>
         <hr />
@@ -130,15 +131,27 @@
           </div>
           <hr />
           <div id="configSubContent">
-            <div id="soundConfigs">
+            <div id="configTitles">
               <p>Som de click:</p>
-              <button id="soundOnBtn" class="OnOffBtn">On</button>
-              <button id="soundOffBtn" class="OnOffBtn">Off</button>
-            </div>
-            <div id="wppConfigs">
+              <br />
               <p>Paralisar papéis de parede:</p>
+              <!-- <button id="soundOnBtn" class="OnOffBtn">On</button>
+              <button id="soundOffBtn" class="OnOffBtn">Off</button> -->
+            </div>
+            <!-- <div id="wppConfigs">
               <button id="wppOnBtn" class="OnOffBtn">On</button>
-              <button id="wppOffBtn" class="OnOffBtn">Off</button>
+              <button id="wppOffBtn" class="OnOffBtn">Off</button> 
+            </div> -->
+            <div id="configBtns">
+              <div id="soundBtns">
+                <button id="soundOnBtn" class="OnOffBtn">On</button>
+                <button id="soundOffBtn" class="OnOffBtn">Off</button>
+              </div>
+              <br />
+              <div id="wppBtns">
+                <button id="wppOnBtn" class="OnOffBtn">On</button>
+                <button id="wppOffBtn" class="OnOffBtn">Off</button>
+              </div>
             </div>
           </div>
         </div>
@@ -199,7 +212,7 @@
     <footer id="footer">
       <div id="start">
         <img class="footerImg" src="./images/icons/windows-icon.png" />
-        <p>Menu</p>
+        <p>Iniciar</p>
       </div>
       <div id="clock"><p></p></div>
     </footer>
@@ -209,6 +222,5 @@
     <script type="module" src="src/js/index.js"></script>
     <script type="module" src="src/js/script.js"></script>
     <script type="module" src="src/js/footer.js"></script>
-    <!--<script type="module" src="src/js/playerHandler.js"></script> -->
   </body>
 </html>

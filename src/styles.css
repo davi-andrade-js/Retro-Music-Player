@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "windows-95";
 }
 
 @font-face {
@@ -16,7 +17,6 @@ body {
   height: 100vh;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "windows-95";
 }
 
 button {
@@ -70,7 +70,7 @@ button:hover {
   justify-content: center;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: none;
 }
 
@@ -97,8 +97,7 @@ button:hover {
 }
 
 #computerScreen {
-  width: 61rem;
-  height: 26.5rem;
+  width: 60%;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -117,6 +116,42 @@ button:hover {
   margin-top: 25px;
 }
 
+.wallpaper {
+  width: 210px;
+  height: 130px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  cursor: pointer;
+}
+
+.computerMainContent {
+  font-size: 25px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+@media (max-width: 500px) {
+  #computerContent {
+    gap: 15px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    margin-top: 15px;
+  }
+
+  .wallpaper {
+    width: 110px;
+    height: 65px;
+  }
+
+  .computerMainContent {
+    font-size: 20px;
+  }
+}
+
 #configSection {
   position: absolute;
   top: 0;
@@ -129,8 +164,8 @@ button:hover {
 }
 
 #configScreen {
-  width: 40rem;
-  height: 20rem;
+  width: 30rem;
+  height: auto;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -157,15 +192,32 @@ button:hover {
 
 #configSubContent {
   font-size: 22px;
-  gap: 10px;
   margin-top: 10px;
   margin-left: 5px;
-  flex-direction: column;
+  flex-direction: row;
   display: flex;
 }
 
-#soundConfigs,
+#configsTitles,
 #wppConfigs {
+  display: flex;
+  flex-direction: row;
+}
+
+#configTitles {
+  display: flex;
+  flex-direction: column;
+}
+
+#configBtns {
+  display: flex;
+  flex-direction: column;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+#soundBtns,
+#wppBtns {
   display: flex;
   flex-direction: row;
 }
@@ -175,6 +227,33 @@ button:hover {
   width: 2.5rem;
   height: 1.7rem;
   font-size: 15px;
+}
+
+@media (max-width: 500px) {
+  #configScreen {
+    width: 60%;
+  }
+
+  .mainContent {
+    font-size: 20px;
+  }
+
+  #configSubContent {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .OnOffBtn {
+    margin-right: 0;
+    margin-left: auto;
+    width: 2rem;
+    height: 1.4rem;
+  }
+
+  #soundBtns,
+  #wppBtns {
+    gap: 7px;
+  }
 }
 
 #infoSection {
@@ -219,6 +298,21 @@ button:hover {
   font-size: 20px;
 }
 
+@media (max-width: 500px) {
+  #infoScreen {
+    width: 60vh;
+    height: 35vh;
+  }
+
+  #infoMainContent {
+    font-size: 20px;
+  }
+
+  .infoSubContent {
+    font-size: 18px;
+  }
+}
+
 #startSection {
   position: absolute;
   top: 0;
@@ -256,11 +350,11 @@ button:hover {
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   #musicPlayerScreen {
     width: 82%;
   }
-}
+} */
 
 .screenHeader {
   color: white;
@@ -368,16 +462,6 @@ progress {
 .endTime {
   width: 30px;
   font-size: 13px;
-}
-
-.wallpaper {
-  width: 220px;
-  height: 130px;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  border-right: 2px solid #393939;
-  border-bottom: 2px solid #393939;
-  cursor: pointer;
 }
 
 .footerImg {
