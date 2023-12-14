@@ -58,7 +58,7 @@ function switchWallpaperExtension(extension) {
 
 let isWppPaused = localStorage.getItem("pauseWpp") ?? false;
 
-if (isWppPaused === "true" || clickSoundOn === true) {
+if (isWppPaused === "true" || isWppPaused === true) {
   wppOnBtn.style.backgroundColor = "#00ff00";
   switchWallpaperExtension("png");
 } else {
