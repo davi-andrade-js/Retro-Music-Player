@@ -85,6 +85,114 @@ button:hover {
   display: block;
 }
 
+.songGif {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #393939;
+}
+
+.songTitle {
+  display: block;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.songAuthor {
+  font-size: 18px;
+  color: #3f3f3f;
+}
+
+.progressBar {
+  width: 100%;
+  margin: 10px auto 10px auto;
+  height: 2px;
+  border-top: 2px solid #393939;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #393939;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+progress {
+  height: 2px;
+  width: 0%;
+}
+
+.progressMark {
+  width: 10px;
+  height: 15px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  border-radius: 0;
+  background: #c0c0c0;
+}
+
+.controlsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.musicBtn {
+  height: 40px;
+  width: 40px;
+}
+
+.volumeBtn {
+  height: 30px;
+  width: 30px;
+}
+
+.currentTime,
+.endTime {
+  width: 30px;
+  font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  #musicPlayerScreen {
+    width: 280px;
+    height: 73%;
+  }
+
+  .songTitle {
+    font-size: 20px;
+    padding: 3px;
+  }
+
+  .songAuthor {
+    font-size: 15px;
+  }
+
+  .progressMark {
+    width: 9px;
+    height: 13.5px;
+  }
+
+  .musicBtn {
+    height: 35px;
+    width: 35px;
+  }
+
+  .volumeBtn {
+    height: 26px;
+    width: 26px;
+  }
+}
+
 #computerSection {
   position: absolute;
   top: 0;
@@ -97,7 +205,7 @@ button:hover {
 }
 
 #computerScreen {
-  width: 60%;
+  width: 50rem;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -117,8 +225,8 @@ button:hover {
 }
 
 .wallpaper {
-  width: 210px;
-  height: 130px;
+  width: 100%;
+  height: 16vh;
   border-top: 2px solid white;
   border-left: 2px solid white;
   border-right: 2px solid #393939;
@@ -135,6 +243,10 @@ button:hover {
 }
 
 @media (max-width: 500px) {
+  #computerScreen {
+    width: 82%;
+  }
+
   #computerContent {
     gap: 15px;
     grid-template-columns: auto auto;
@@ -149,6 +261,24 @@ button:hover {
 
   .computerMainContent {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 850px) {
+  #computerScreen {
+    width: 82%;
+  }
+
+  #computerContent {
+    gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    margin-top: 15px;
+  }
+
+  .wallpaper {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -231,7 +361,7 @@ button:hover {
 
 @media (max-width: 500px) {
   #configScreen {
-    width: 60%;
+    width: 82%;
   }
 
   .mainContent {
@@ -269,8 +399,8 @@ button:hover {
 }
 
 #infoScreen {
-  width: 38rem;
-  height: 17rem;
+  width: 30rem;
+  height: 16rem;
   padding: 10px;
   background-color: #c0c0c0;
   border-top: 2px solid white;
@@ -282,10 +412,8 @@ button:hover {
 
 #infoContent {
   width: 100%;
-  height: 13rem;
+  height: 90%;
   justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
   display: flex;
 }
@@ -300,16 +428,16 @@ button:hover {
 
 @media (max-width: 500px) {
   #infoScreen {
-    width: 60vh;
-    height: 35vh;
+    width: 82%;
+    height: 18rem;
   }
 
   #infoMainContent {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .infoSubContent {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -350,11 +478,23 @@ button:hover {
   cursor: pointer;
 }
 
-/* @media (max-width: 500px) {
-  #musicPlayerScreen {
+@media (max-width: 500px) {
+  #startScreen {
     width: 82%;
+    height: 25rem;
   }
-} */
+
+  #startMainContent {
+    font-size: 22px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+
+  .startSubContent {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
 
 .screenHeader {
   color: white;
@@ -384,84 +524,6 @@ button:hover {
   justify-content: center;
   width: 22px;
   height: 22px;
-}
-
-.songGif {
-  width: 100%;
-  height: 300px;
-  border: 2px solid #393939;
-}
-
-.songTitle {
-  display: block;
-  font-size: 1.8rem;
-  padding: 5px;
-}
-
-.songAuthor {
-  display: block;
-  font-size: 18px;
-  color: #3f3f3f;
-}
-
-.progressBar {
-  width: 100%;
-  margin: 10px auto 10px auto;
-  height: 2px;
-  border-top: 2px solid #393939;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  border-left: 2px solid #393939;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  cursor: pointer;
-}
-
-progress {
-  height: 2px;
-  width: 0%;
-}
-
-.progressMark {
-  width: 10px;
-  height: 15px;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  border-right: 2px solid #393939;
-  border-bottom: 2px solid #393939;
-  border-radius: 0;
-  background: #c0c0c0;
-}
-
-.controlsBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.controls {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.musicBtn {
-  height: 40px;
-  width: 40px;
-}
-
-.volumeBtn {
-  height: 30px;
-  width: 30px;
-}
-
-.currentTime,
-.endTime {
-  width: 30px;
-  font-size: 13px;
 }
 
 .footerImg {
