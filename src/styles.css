@@ -261,24 +261,30 @@ progress {
 
   .computerMainContent {
     font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 }
 
 @media (min-width: 501px) and (max-width: 850px) {
   #computerScreen {
-    width: 82%;
+    width: 90%;
   }
 
   #computerContent {
     gap: 10px;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto;
     margin-top: 15px;
   }
 
   .wallpaper {
     width: 100%;
     height: 100%;
+  }
+
+  .computerMainContent {
+    font-size: 22px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 }
 
@@ -312,7 +318,7 @@ progress {
   display: flex;
 }
 
-.mainContent {
+#configMainContent {
   font-size: 25px;
   width: 100%;
   margin-top: 10px;
@@ -364,7 +370,7 @@ progress {
     width: 82%;
   }
 
-  .mainContent {
+  #configMainContent {
     font-size: 20px;
   }
 
