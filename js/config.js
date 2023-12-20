@@ -1,4 +1,4 @@
-import { playClickSound } from "./script.js";
+import { playClickSound } from "./player.js";
 
 export function renderConfig() {
   const configSection = document.getElementById("configSection");

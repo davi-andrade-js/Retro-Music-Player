@@ -1,8 +1,8 @@
-import { pause, playerRender } from "./script.js";
-import { renderWallpapers } from "./my-computer.js";
+import { pause, playerRender, playClickSound } from "./player.js";
+import { renderWallpapers } from "./myComputer.js";
 import { renderConfig } from "./config.js";
 import { renderInfo } from "./info.js";
-import { playClickSound } from "./script.js";
+import { startRender } from "./footer.js";
 
 const playerSection = document.getElementById("playerSection");
 const playerButton = document.getElementById("musicPlayer");
@@ -24,6 +24,7 @@ playerButton.addEventListener("click", () => handleButtonClick(playerRender));
 myComputerButton.addEventListener("click", () => handleButtonClick(renderWallpapers));
 configButton.addEventListener("click", () => handleButtonClick(renderConfig));
 infoButton.addEventListener("click", () => handleButtonClick(renderInfo));
+startRender(); // windows button
 
 closePlayerBtn.addEventListener("click", () => {
   handleCloseButtons(playerSection), pause();

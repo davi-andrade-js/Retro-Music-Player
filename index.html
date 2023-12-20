@@ -4,7 +4,12 @@
     <title>Retro Music Player</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/player.css" />
+    <link rel="stylesheet" href="./css/config.css" />
+    <link rel="stylesheet" href="./css/myComputer.css" />
+    <link rel="stylesheet" href="./css/info.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
     <link rel="icon" href="./images/icons/music-player-icon.png" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/daffe5b995.js" crossorigin="anonymous"></script>
   </head>
@@ -55,7 +60,7 @@
           <label class="songAuthor">Autor</label>
         </div>
 
-        <audio id="audio" src="src/songs/wave.mp3"></audio>
+        <audio id="audio" src="./songs/wave.mp3"></audio>
 
         <div class="progressBar">
           <progress value="0" max="100"></progress>
@@ -100,7 +105,7 @@
           <p>Escolha o papel de parede</p>
         </div>
         <hr />
-        <div id="computerContent">
+        <div id="computerSubContent">
           <img class="wallpaper" src="./images/wallpapers/comoeuquerowppr.gif" />
           <img class="wallpaper" src="./images/wallpapers/city.gif" />
           <img class="wallpaper" src="./images/wallpapers/rainyday.gif" />
@@ -191,14 +196,17 @@
           <p id="startMainContent">Músicas</p>
         </div>
         <hr />
-        <div>
-          <p class="startSubContent">1. Wave - Tom Jobim</p>
-          <p class="startSubContent">2. João e Maria - Chico Buarque</p>
-          <p class="startSubContent">3. La Belle de Jour - Alceu Valença</p>
-          <p class="startSubContent">4. Como eu quero - Kid Abelha</p>
-          <p class="startSubContent">5. A Noite - Tiê</p>
-          <p class="startSubContent">6. A Banda - Chico Buarque</p>
-          <p class="startSubContent">7. Carolina, Carol Bela - Jorge Ben & Toquinho</p>
+        <div id="startSubContent">
+          <div>
+            <p class="startSongsList">1. Wave - Tom Jobim</p>
+            <p class="startSongsList">2. João e Maria - Chico Buarque</p>
+            <p class="startSongsList">3. La Belle de Jour - Alceu Valença</p>
+            <p class="startSongsList">4. Como eu quero - Kid Abelha</p>
+            <p class="startSongsList">5. A Noite - Tiê</p>
+            <p class="startSongsList">6. A Banda - Chico Buarque</p>
+            <p class="startSongsList">7. Carolina, Carol Bela - Jorge Ben & Toquinho</p>
+          </div>
+          <p id="startTip">Abra o Player de Música para tocar as músicas!</p>
         </div>
       </div>
     </section>
@@ -213,8 +221,6 @@
 
     <audio id="clickSound" src="audio/click.mp3"></audio>
 
-    <script type="module" src="src/js/index.js"></script>
-    <script type="module" src="src/js/script.js"></script>
-    <script type="module" src="src/js/footer.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

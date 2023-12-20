@@ -1,0 +1,94 @@
+#computerSection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+#computerScreen {
+  width: 50rem;
+  padding: 10px;
+  background-color: #c0c0c0;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  display: none;
+}
+
+.computerMainContent {
+  font-size: 25px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+#computerSubContent {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.wallpaper {
+  width: 100%;
+  height: 16vh;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #393939;
+  border-bottom: 2px solid #393939;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  #computerScreen {
+    width: 82%;
+  }
+
+  #computerSubContent {
+    gap: 15px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    margin-top: 15px;
+  }
+
+  .wallpaper {
+    width: 110px;
+    height: 65px;
+  }
+
+  .computerMainContent {
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 850px) {
+  #computerScreen {
+    width: 90%;
+  }
+
+  #computerSubContent {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .wallpaper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .computerMainContent {
+    font-size: 22px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}

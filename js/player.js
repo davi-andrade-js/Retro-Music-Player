@@ -22,7 +22,8 @@ const endTime = document.querySelector(".endTime");
 const playBtn = "<i class='fa-solid fa-play' style='color: #000000;'></i>";
 const pauseBtn = "<i class='fa-solid fa-pause' style='color: #000000;'></i>";
 
-// eventos
+// events
+
 playPauseBtn.addEventListener("click", playPause);
 increaseVolume.addEventListener("click", volumeUp);
 decreaseVolume.addEventListener("click", volumeDown);
@@ -36,7 +37,7 @@ song.addEventListener("timeupdate", () => {
   }
 });
 
-// funções
+// player functions
 
 export function playerRender() {
   const musicPlayerScreen = document.getElementById("musicPlayerScreen");
@@ -70,6 +71,7 @@ function rewind() {
 
 function skip() {
   playClickSound();
+  savedPlaybackPosition = 0;
   if (songIndex === songs.length - 1) {
     songIndex = 0;
     playerRender(songIndex);
@@ -129,21 +131,32 @@ export function playClickSound() {
 
 // progressbar
 
-progressBarDiv.onclick = (e) => {
+function progressBarHandler(e) {
+  const progressBarRect = progressBarDiv.getBoundingClientRect();
+  const clickPositionX = e.clientX - progressBarRect.left;
+  const progressBarWidth = progressBarRect.width;
+  const clickPositionRatio = clickPositionX / progressBarWidth;
+  const newTime = clickPositionRatio * song.duration;
+  song.currentTime = newTime;
+}
+
+progressBarDiv.addEventListener("mousedown", (e) => {
   progressBarHandler(e);
-};
+
+  function moveHandler(e) {
+    progressBarHandler(e);
+  }
+
+  document.addEventListener("mousemove", moveHandler);
+  document.addEventListener("mouseup", () => {
+    document.removeEventListener("mousemove", moveHandler);
+  });
+});
 
 function updateProgress() {
   progressBar.style.width = Math.floor((song.currentTime / song.duration) * 100) + "%";
   songCurrentTime.textContent = secondsToMinutes(Math.floor(song.currentTime));
   savedPlaybackPosition = song.currentTime;
-}
-
-function progressBarHandler(e) {
-  const rect = progressBarDiv.getBoundingClientRect();
-  const offsetX = e.clientX - rect.left;
-  progressBar.style.width = offsetX + "px";
-  song.currentTime = (offsetX / progressBarDiv.offsetWidth) * song.duration;
 }
 
 function secondsToMinutes(seconds) {

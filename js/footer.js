@@ -1,13 +1,11 @@
 // start
 
-import { playClickSound } from "./script.js";
+import { playClickSound } from "./player.js";
 
 const startBtn = document.getElementById("start");
 const startSection = document.getElementById("startSection");
 
-startRender();
-
-function startRender() {
+export function startRender() {
   startBtn.addEventListener("click", () => {
     playClickSound();
     startSection.style.display = "flex";
