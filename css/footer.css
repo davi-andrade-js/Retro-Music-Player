@@ -82,6 +82,10 @@
   cursor: pointer;
 }
 
+#clock {
+  cursor: default;
+}
+
 @media (max-width: 500px) {
   #startScreen {
     width: 82%;
