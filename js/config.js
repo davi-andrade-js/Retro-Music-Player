@@ -1,5 +1,3 @@
-import { playClickSound } from "./player.js";
-
 export function renderConfig() {
   const configSection = document.getElementById("configSection");
   const configScreen = document.getElementById("configScreen");
@@ -24,7 +22,6 @@ if (clickSoundOn === "true" || clickSoundOn === true) {
 }
 
 soundOnBtn.addEventListener("click", () => {
-  playClickSound();
   clickSound.muted = false;
   soundOnBtn.style.backgroundColor = "#00ff00";
   soundOffBtn.style.backgroundColor = "#c0c0c0";
@@ -67,7 +64,6 @@ if (isWppPaused === "true" || isWppPaused === true) {
 }
 
 wppOnBtn.addEventListener("click", () => {
-  playClickSound();
   switchWallpaperExtension("png");
 
   localStorage.setItem("pauseWpp", true);
@@ -78,7 +74,6 @@ wppOnBtn.addEventListener("click", () => {
 });
 
 wppOffBtn.addEventListener("click", () => {
-  playClickSound();
   switchWallpaperExtension("gif");
 
   localStorage.setItem("pauseWpp", false);

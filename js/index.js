@@ -1,4 +1,4 @@
-import { pause, playerRender, playClickSound } from "./player.js";
+import { pause, playerRender } from "./player.js";
 import { renderWallpapers } from "./myComputer.js";
 import { renderConfig } from "./config.js";
 import { renderInfo } from "./info.js";
@@ -34,10 +34,14 @@ closeConfigBtn.addEventListener("click", () => handleCloseButtons(configSection)
 closeInfoBtn.addEventListener("click", () => handleCloseButtons(infoSection));
 
 function handleButtonClick(renderFunction) {
-  playClickSound();
   renderFunction();
 }
 
 function handleCloseButtons(section) {
   section.style.display = "none";
 }
+
+document.addEventListener("click", () => {
+  const clickSound = document.getElementById("clickSound");
+  clickSound.play();
+});
