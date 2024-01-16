@@ -102,7 +102,6 @@ progress {
 @media (max-width: 500px) {
   #musicPlayerScreen {
     width: 280px;
-    height: 75.5%;
   }
 
   .songTitle {
