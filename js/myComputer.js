@@ -8,7 +8,7 @@ export function renderWallpapers() {
   computerScreen.style.display = "block";
 }
 
-const initialBg = localStorage.getItem("bgGif") ?? wallpapers[0];
+const initialBg = localStorage.getItem("bgGif") ?? wallpapers[0].getAttribute("src");
 document.querySelector("body").style.backgroundImage = `url(${initialBg})`;
 
 wallpapers.forEach((wallpaper) => {
