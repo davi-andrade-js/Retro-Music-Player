@@ -57,6 +57,7 @@ export function playerRender() {
 }
 
 function rewind() {
+  savedPlaybackPosition = 0;
   if (songIndex === 0) {
     songIndex = songs.length - 1;
     playerRender(songIndex);
