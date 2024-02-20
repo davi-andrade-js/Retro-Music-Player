@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "windows-95";
+  src: url("../fonts/W95FA.otf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,24 +9,30 @@
   font-family: "windows-95";
 }
 
-@font-face {
-  font-family: "windows-95";
-  src: url("../fonts/W95FA.otf");
+:root {
+  --white: #f9f9f9ff;
+  --lightgrey: #ececec;
+  --mediumgrey: #a7a7a7;
+  --grey: #c4c4c4;
+  --darkgrey: #343434;
+  --black: #1d021d;
+  --blue: #1b77f3;
+  --red: #cf3c3f;
 }
 
 body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100dvh;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 button {
   cursor: pointer;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
+  border-top: 2px solid var(--white);
+  border-left: 2px solid var(--white);
   border-right: 2px solid #393939;
   border-bottom: 2px solid #393939;
   border-radius: 0;
